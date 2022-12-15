@@ -1,0 +1,113 @@
+ @import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;700&display=swap');
+
+:root{
+    --color-dark-blue: hsl(179, 62%, 43%);
+    --color-orange: hsl(71, 73%, 54%);
+    --color-white: white;
+    --color-blue: hsl(218, 22%, 67%);
+    --color-backgroup: hsl(204, 43%, 93%) ;
+}
+
+body{
+    background-color: var(--color-backgroup);
+    font-family: 'Karla', sans-serif;;
+}
+
+h3{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.container{
+    position: relative;
+    left: 22%;
+    top: 90px;
+    width: 700px;
+    height: 440px;
+    display: grid;
+    grid-template-areas: "community community" "subscriptions us";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.bg-white{
+    background-color:  var(--color-white);
+}
+
+.bg-drack-blue{
+    background-color: var(--color-dark-blue);
+}
+
+.bg-blue{
+    background-color: var(--color-blue);
+}
+
+.component{
+    width: 100%;
+    height: 100%;
+    padding: 30px 30px 15px 30px;
+}
+
+
+.component:nth-child(1){
+    grid-area: community;
+}
+
+.component:nth-child(2){
+    grid-area: subscriptions;
+    display: flex;
+    flex-direction: column;
+}
+
+.component:nth-child(3){
+    grid-area: us;
+}
+
+.component:nth-child(2), .component:nth-child(3){
+    color: var(--color-white);
+}
+
+.component:nth-child(1) > h3{
+    color: var(--color-dark-blue);
+}
+
+.component:nth-child(1) > p{
+    color: var(--color-orange);
+    font-weight: 600;
+}
+
+.component:nth-child(1) > span{
+    color: var(--color-blue);
+}
+
+.component:nth-child(2) > p{
+    color: var(--color-backgroup);
+}
+
+.component:nth-child(2) > p strong{
+    color: var(--color-white);
+    font-size: 28px;
+}
+
+.component:nth-child(2) > button{
+    width: 220px;
+    height: 38px;
+    margin-top: 20px;
+    border-radius: 3px;
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    border: var(--color-blue);
+    font-size: 20px;
+}
+
+@media (max-width: 700px){
+    .container{
+        left: auto;
+        top: 20px;
+        width: 95%;
+        grid-template-areas: "community" "subscriptions" "us" ;
+        grid-template-columns: repeat(1, 1fr);
+        
+    }
+}
